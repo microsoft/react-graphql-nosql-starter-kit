@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "version": "",
+  "description": "",
+  "scripts": {
+    "test": "echo \"No tests yet...\""
+  },
+  "author": "",
+  "dependencies": {
+    "apollo-datasource-cosmosdb": "0.0.17",
+    "apollo-server-azure-functions": "^3.3.0",
+    "azure-function-log-intercept": "^1.0.10",
+    "graphql": "^15.6.1",
+    "nanoid": "^3.1.29"
+  }
+}
