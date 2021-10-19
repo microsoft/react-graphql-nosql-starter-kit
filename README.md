@@ -147,6 +147,13 @@ At the top of the file is the const that defines the data.
 
 ### Notes
 1. You'll need to index the 'posted' field in order to use the ORDER DESC
+2. How do I pull changes from the original repo into my repo?
+```
+git remote add upstream https://github.com/microsoft/react-graphql-nosql-starter-kit
+git fetch upstream
+git merge upstream/main main
+git push
+```
 
 # What do I do now?
 
