@@ -33,7 +33,13 @@ func start
 ## Transition to the Cloud
 ### Run front end and graphql in the cloud (Free)
 1. Follow this [quickstart to deploy an Azure Static Site](https://docs.microsoft.com/en-us/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript#create-a-static-web-app)
-2. After completing the above, whenever you push to main your code will be auto-deployed to the cloud!
+2. The previous step will create a file like ".github/workflow/azure-static-web-apps-orange-flower-05e7e1b10.yml"  You'll need to edit two lines (app_location and api_location) in this file:
+```yml
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: "/react-app/" # App source code path
+          api_location: "/graphql/" # A
+```
+3. After completing the above, whenever you push to main your code will be auto-deployed to the cloud!
 
 ### Run backend (nosql) in the cloud
 1. Follow [this quickstart to create a Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/create-cosmosdb-resources-portal)  For low use, or just getting started a "serverless" Cosmos will be adequate and cost pennies per month.
