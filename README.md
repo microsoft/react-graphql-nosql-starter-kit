@@ -156,7 +156,12 @@ git push
 ```
 
 # What do I do now?
-
+Following all of the first two quick starts will get you a cloud based REACT a] with a graphql backend.  Some suggestions on modifying the a]:
+1. Change to enother UI library or customize the bootstrap file
+2. Add new data and new queries to GraphQL
+3. Share your thoughts and what you create with the repo owners.
+4. Make suggestions on how to change this repo for the future.
+   
 # Refernce Links
 * [Azure Static Web Apps](https://azure.microsoft.com/en-us/services/app-service/static/)
 * [Apollo Server](https://www.apollographql.com/docs/apollo-server/getting-started/)
