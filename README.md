@@ -33,7 +33,7 @@ func start
 ## Transition to the Cloud
 ### Run front end and graphql in the cloud (Free)
 1. [Create a GitHub Personal Access Token](https://docs.microsoft.com/en-us/azure/static-web-apps/publish-azure-resource-manager?tabs=azure-cli#create-a-github-personal-access-token)
-3. Click: [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Freact-graphql-nosql-starter-kit%2Fdeploy%2Fazuredeploy.json)
+3. Click: [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2Freact-graphql-nosql-starter-kit%2Fmain%2Fdeploy%2Fazuredeploy.json)
 4. After completing the above, whenever you push to main your code will be auto-deployed to the cloud!
 
 ### Run backend (nosql) in the cloud
