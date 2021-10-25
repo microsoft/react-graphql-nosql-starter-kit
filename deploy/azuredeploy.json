@@ -1,0 +1,85 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "variables": {
+        "appLocation": {
+            "type": "string",
+            "defaultValue": "/react-app/"
+        },
+        "apiLocation": {
+            "type": "string",
+            "defaultValue": "/graphql/"
+        }
+    },
+    "parameters": {
+        "name": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "Central US"
+        },
+        "sku": {
+            "type": "string",
+            "defaultValue": "Free"
+        },
+        "skucode": {
+            "type": "string",
+            "defaultValue": "Free"
+        },
+        "repositoryUrl": {
+            "type": "string"
+        },
+        "branch": {
+            "type": "string",
+            "defaultValue": "main"
+        },
+        "repositoryToken": {
+            "type": "securestring"
+        },        
+        "appArtifactLocation": {
+            "type": "string"
+        },
+        "resourceTags": {
+            "type": "object"
+        },
+        "appSettings": {
+            "type": "object"
+        }
+    },
+    "resources": [
+        {
+            "apiVersion": "2021-01-15",
+            "name": "[parameters('name')]",
+            "type": "Microsoft.Web/staticSites",
+            "location": "[parameters('location')]",
+            "tags": "[parameters('resourceTags')]",
+            "properties": {
+                "repositoryUrl": "[parameters('repositoryUrl')]",
+                "branch": "[parameters('branch')]",
+                "repositoryToken": "[parameters('repositoryToken')]",
+                "buildProperties": {
+                    "appLocation": "[variables('appLocation')]",
+                    "apiLocation": "[variables('apiLocation')]",
+                    "appArtifactLocation": "[parameters('appArtifactLocation')]"
+                }
+            },
+            "sku": {
+                "Tier": "[parameters('sku')]",
+                "Name": "[parameters('skuCode')]"
+            },
+            "resources":[
+                {
+                    "apiVersion": "2021-01-15",
+                    "name": "appsettings",
+                    "type": "config",
+                    "location": "[parameters('location')]",
+                    "properties": "[parameters('appSettings')]",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/staticSites', parameters('name'))]"
+                    ]
+                }
+            ]
+        }
+    ]
+}
